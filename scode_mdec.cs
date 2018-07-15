@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO.Ports;
 
 namespace ARDMorseDecoder
 {
@@ -11,48 +10,37 @@ namespace ARDMorseDecoder
     {
         static void Main(string[] args)
         {
-            string A = ".-";    //2 ---+
-            string B = "-...";  //4 -+
-            string C = "-.-.";  //4 -+
-            string D = "-..";   //3 --+
-            string E = ".";     //1 ----+
-            string F = "..-.";  //4 -+
-            string G = "--.";   //3 --+
-            string H = "....";  //4 -+
-            string I = "..";    //2 ---+
-            string J = ".---";  //4 -+
-            string K = "-.-";   //3 --+
-            string L = ".-..";  //4 -+
-            string M = "--";    //2 ---+
-            string N = "-.";    //2 ---+
-            string O = "---";   //3 --+
-            string P = ".--.";  //4 -+
-            string Q = "--.-";  //4 -+
-            string R = ".-.";   //3 --+
-            string S = "...";   //3 --+
-            string T = "-";     //1 ----+
-            string U = "..-";   //3 --+
-            string V = "...-";  //4 -+
-            string W = ".--";   //3 --+
-            string X = "-..-";  //4 -+
-            string Y = "-.--";  //4 -+
-            string Z = "--..";  //4 -+
+            string A = ".-";    
+            string B = "-...";  
+            string C = "-.-.";  
+            string D = "-..";   
+            string E = ".";     
+            string F = "..-.";  
+            string G = "--.";   
+            string H = "....";  
+            string I = "..";    
+            string J = ".---";  
+            string K = "-.-";   
+            string L = ".-..";  
+            string M = "--";    
+            string N = "-.";    
+            string O = "---";   
+            string P = ".--.";  
+            string Q = "--.-";  
+            string R = ".-.";   
+            string S = "...";   
+            string T = "-";     
+            string U = "..-";   
+            string V = "...-";  
+            string W = ".--";   
+            string X = "-..-";  
+            string Y = "-.--";  
+            string Z = "--..";  
 
+            Console.WriteLine("Insert morse code");
+            string msg1 = Console.ReadLine();
+            string msg = string.Format("{0}  ", msg1);
 
-            /*
-            SerialPort port0 = new SerialPort();
-            port0.BaudRate = 9600;
-            port0.PortName = "COM5";
-            port0.Open();
-
-            string received = "";
-            while (true)
-            {
-                received = port0.ReadLine();
-            }
-            */
-
-            string msg = ".- -... -... -... .-  "; // = ABBBA
             string[] msgarr = new string[msg.Length];
 
             for (int i = 0; i < msg.Length; i++)
@@ -290,12 +278,7 @@ namespace ARDMorseDecoder
                             compl = true;
                         }
                     }
-
-                    catch (IndexOutOfRangeException)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("End of message");
-                    }
+                    catch (IndexOutOfRangeException) { }
                 }
             }
             Console.ReadKey();
